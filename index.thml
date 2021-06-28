@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block heading %} First page {% endblock %} {%
+block body %}
+<ul>
+  {% for name in names %}
+  <li>{{ name }}</li>
+  {% endfor %}
+</ul>
+<!-- figure out url for more function and like here  -->
+<a href="{{ url_for('more') }}">See more...</a>
+<!-- submit form to /hello route via post  -->
+<form action="{{ url_for('hello') }}" method="post">
+<input type="text" name="name" placeholder="Enter Name"></input>
+<button>Submit</button>
+</form>
+{% endblock %}
